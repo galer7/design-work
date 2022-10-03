@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 export default function Parking() {
   const parkingRows = [
     {
@@ -76,17 +78,16 @@ export default function Parking() {
           {/* parking zones */}
           {parkingRows.map((row) => (
             <div
-              className={`grid ${
-                row.type.includes("vertical")
-                  ? "grid-flow-row"
-                  : "grid-flow-col"
-              } absolute`}
+              className={clsx("absolute grid", {
+                "grid-flow-row": row.type.includes("vertical"),
+                "grid-flow-col": !row.type.includes("vertical"),
+              })}
               style={{ left: `${row.x * 100}%`, top: `${row.y * 100}%` }}
               key={row.id}
             >
               {row.areLotsTaken.map((isOccupied, index) => (
                 <div
-                  className={`border-2 ${getSlotOpeningClass(row.type)}`}
+                  className={clsx("border-2", getSlotOpeningClass(row.type))}
                   key={index}
                 >
                   🚗
