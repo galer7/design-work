@@ -5,7 +5,7 @@ export default function Zara() {
       <title>ZARA</title>
       <div className="fixed -z-10 h-full w-1/2 bg-gradient-to-tr from-yellow-500 via-red-600 to-red-900">
         <div className="items-middle flex h-full w-full items-end justify-end text-white">
-          <p className="sm:text-md lg:-mb-5 mr-2 font-elsie text-3xl uppercase">
+          <p className="mr-2 -mb-2 font-elsie text-5xl uppercase md:-mb-3 md:text-7xl lg:-mb-5 lg:text-9xl">
             zara
           </p>
         </div>
